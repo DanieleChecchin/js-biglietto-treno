@@ -11,6 +11,19 @@
 
 // ! Fase preparatoria
 
+// Chilometri
+const kmresultElement = document.getElementById('kmresult');
+console.log(kmresultElement)
+
+// Età
+const ageresultElement = document.getElementById('ageresult');
+console.log(ageresultElement)
+
+// Prezzo senza sconto
+const firsticketElement = document.getElementById('firsticket')
+console.log(firsticketElement)
+
+// Prezzo finale
 const ticketElement = document.getElementById('ticket');
 console.log(ticketElement)
 
@@ -40,16 +53,34 @@ const ticketPrice = kmNumber*0.21;
 console.log(ticketPrice + ' ' + priceSuffix)
 
 // Calcolo lo sconto in base all'età
-if(age < 18){
-    console.log(ticketPrice - (20/100))
-    result =(ticketPrice - (20/100))
-}   else if(age > 65){
-    console.log(ticketPrice - (40/100))
-    result =(ticketPrice - (40/100))
-}
+result = ticketPrice
 
-const message = `Il costo del tuo biglietto è di ${result}`
+if(age < 18){
+    console.log(ticketPrice - (ticketPrice / 100*20))
+    result = ticketPrice - (ticketPrice / 100*20)
+}   else if(age > 65){
+    console.log(ticketPrice - (ticketPrice / 100*40))
+    result = ticketPrice - (ticketPrice / 100*40)
+}   
+
+// Imposto 2 cifre decimali
+result.toFixed(2);
 
 // ! Fase produzione output
 
+// Stabilisco il messaggio relativo ai chilometri da mostrare nel DOM
+const kmresult = `Chilometri da percorrere: ${kmNumber} ${kmSuffix}`
+kmresultElement.innerText = kmresult;
+
+// Stabilisco il messaggio relativo all'età da mostrare nel DOM
+const ageresult = `Età inserita: ${age} ${ageSuffix}`
+ageresultElement.innerText = ageresult;
+
+// Stabilisco il messaggio relativo al prezzo standard da mostrare nel DOM
+const firsticket = `Il costo standard del tuo biglietto è di ${ticketPrice} ${priceSuffix} `
+firsticketElement.innerText = firsticket;
+
+// Stabilisco il messaggio del prezzo finale da mostrare nel DOM
+const message = `Il costo finale del tuo biglietto è di ${result} ${priceSuffix}`
 ticketElement.innerText = message;
+
