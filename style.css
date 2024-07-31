@@ -9,12 +9,51 @@
 /* Generics */
 
 body{
-font-family: 'Rubik Mono One', sans-serif;
+    font-family: 'Rubik Mono One', sans-serif;
+    background-image: url(stazione.jpeg);
 }
 
 /* Utils */
 
 .container{
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 600px;
+    margin: 150px auto;
+}
+
+header{
+    height: 100px;
+    background-color: rgb(41, 40, 40);
+}
+
+img{
+    width: 140px;
+    height: 100px;
+}
+
+.topbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 0 20px;
+}
+
+.topbar h1{
+    text-decoration: underline;
+    font-style: italic;
+}
+
+.style{
+    background-color: #a9a9a9;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    box-shadow: 5px 10px 40px 25px;
+}
+
+.style div{
+    border: 1px solid white;
 }
