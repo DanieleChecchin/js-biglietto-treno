@@ -18,6 +18,8 @@ console.log(ticketElement)
 const kmSuffix = 'km'
 // Preparo il suffisso dell'età
 const ageSuffix = 'anni'
+//Preparo il suffiso 'euro'
+const priceSuffix = '€'
 
 // ! Fase raccolta dati
 
@@ -32,6 +34,18 @@ console.log(age + ' ' + ageSuffix)
 // ! Fase lavorazione dati
 
 // Calcolo il prezzo del biglietto in base ai km
-
 const ticketPrice = kmNumber*0.21;
-console.log(ticketPrice)
+console.log(ticketPrice + ' ' + priceSuffix)
+
+// Calcolo lo sconto in base all'età
+if(age < 18){
+    console.log(ticketPrice - (20/100)) 
+}   else if(age > 65){
+    console.log(ticketPrice - (40/100))
+}
+
+const message = `Il costo del tuo biglietto è di ${ticketPrice}`
+
+// ! Fase produzione output
+
+ticketElement.innerText = message;
