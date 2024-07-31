@@ -29,4 +29,9 @@ console.log(kmNumber + ' ' + kmSuffix)
 const age = prompt('Inserire l\'età', '20')
 console.log(age + ' ' + ageSuffix)
 
+// ! Fase lavorazione dati
 
+// Calcolo il prezzo del biglietto in base ai km
+
+const ticketPrice = kmNumber*0.21;
+console.log(ticketPrice)
