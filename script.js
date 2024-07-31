@@ -14,6 +14,8 @@
 const ticketElement = document.getElementById('ticket');
 console.log(ticketElement)
 
+let result = 0
+
 // Preparo il suffisso dei km
 const kmSuffix = 'km'
 // Preparo il suffisso dell'età
@@ -39,12 +41,14 @@ console.log(ticketPrice + ' ' + priceSuffix)
 
 // Calcolo lo sconto in base all'età
 if(age < 18){
-    console.log(ticketPrice - (20/100)) 
+    console.log(ticketPrice - (20/100))
+    result =(ticketPrice - (20/100))
 }   else if(age > 65){
     console.log(ticketPrice - (40/100))
+    result =(ticketPrice - (40/100))
 }
 
-const message = `Il costo del tuo biglietto è di ${ticketPrice}`
+const message = `Il costo del tuo biglietto è di ${result}`
 
 // ! Fase produzione output
 
